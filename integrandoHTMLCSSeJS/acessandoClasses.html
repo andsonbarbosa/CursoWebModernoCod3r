@@ -12,8 +12,29 @@
         Classes
     </div>
     <script>
-        // ...
-    </script>
+        // usando classList para manipular os elementos
+        const classes = document.querySelector('div').classList
+        classes.add('destaque')     //add um css 
+        classes.remove('destaque')  //removendo css
+        classes.toggle('destaque')  //fazendo o oposto do ultimo comando 
+        console.log(classes.contains('destaque'))
+        console.log(classes.length)
+        classes.toggle('destaque')
+        console.log(classes.length)
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length)
+
+        for (let c of classes ) {
+            console.log(c)
+        }
+
+        // OU usando tbm o forEach para imprimir no console
+
+        classes.forEach(c => console.log(c))
+
+    </script>   
 </body>
 
 </html>
