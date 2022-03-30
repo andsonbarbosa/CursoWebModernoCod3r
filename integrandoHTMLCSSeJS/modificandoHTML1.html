@@ -9,7 +9,37 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        
+        const body = document.querySelector('body')
+
+        const div1 = document.createElement('div') // Criando uma div
+        div1.classList.add('destaque')             //add uma class para essa div
+        div1.innerHTML =   'Primeiro'              //colocando "primeiro" como conteudo dessa div
+
+        const div2 = documen.createElement('div')  // Criando a segunda div
+        div2.setAttribute('wm-atributo', 'valor')  //set um atributo
+        div2.innerHTML = 'Segundo'                 //colocando "segundo" como conteudo dessa div
+
+        const p = document.createElement('p')       //criando um paragrafo 
+        p.innerHTML = 'Terceiro'                    //conteudo
+        const div3 = document.createElement('div')  // Criando uma div
+        div3.appendChild(p)                         //adicionando o paragrafo para dentro da div 
+
+        // adicionando as divs dentro do byde
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode('Antes...') //criando um texto
+        div3.insertBefore(texto,div3.childNodes[0])       //add esse texto usando posição
+
+        const div4 = div3.cloneNode(true) //clonando a div3(colocando TRUE erda as heranças, já false não)
+        body.appendChild(div4) //add div ao body
+        body.removeChild(div3) //removendo a div3
+
+
+
+
     </script>
 </body>
 
