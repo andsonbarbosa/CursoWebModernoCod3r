@@ -1,8 +1,11 @@
+//criando um gulp para realizar tarefa de copias de arquivos 
+
 const gulp = require('gulp')
 const series = gulp.series
 
 function copiar(cb) {
-    console.log('Tarefa de copiar!')
+    gulp.src(['pastaA/arquivo1.txt','pastaA/arquivo2.txt'])
+        .pipe(gulp.dest('pastaB'))
     return cb()
 }
 
