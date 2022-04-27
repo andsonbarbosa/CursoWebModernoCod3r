@@ -1,11 +1,24 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Andson Barbosa",
-        "email": "abarbosa@gmail.com"
-    }, {
-        "id": 2,
-        "name":"Renata Manuela",
-        "email":"rmanu@gmail.com"
-    }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Andson Barbosa",
+      "email": "abarbosa@gmail.com"
+    },
+    {
+      "name": "Ana",
+      "email": "test1@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "gab",
+      "email": "gab@.com",
+      "id": 5
+    },
+    {
+      "name": "George ",
+      "email": "big@com",
+      "id": 6
+    }
+  ]
 }
