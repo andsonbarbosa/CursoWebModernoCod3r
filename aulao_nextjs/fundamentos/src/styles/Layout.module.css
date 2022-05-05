@@ -6,7 +6,7 @@
 }
 .cabecalho {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px 20px;
     background-color: #777;
 }
