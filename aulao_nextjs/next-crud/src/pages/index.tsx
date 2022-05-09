@@ -1,34 +1,22 @@
-
-import { useState } from "react";
 import Botao from "../components/Botao";
 import Formulario from "../components/Formulario";
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
-import Cliente from "../core/Cliente";
+import useClientes from "../hooks/useClientes";
 
 
 export default function Home() {
 
-  const clientes = [
-    new Cliente('Ana', 34, '1'),
-    new Cliente('Bia', 24, '2'),
-    new Cliente('Carlos', 37, '3'),
-    new Cliente('Pedro', 46, '4')
-  ]
-
-  function clienteSelecionado(cliente: Cliente){
-
-  }
-
-  function clienteExcluido(cliente: Cliente){
-
-  }
-
-  function salvarCliente(cliente: Cliente){
-    console.log(cliente)
-  }
-
-  const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
+  const { 
+        cliente,
+        clientes,
+        novoCliente,
+        salvarCliente,
+        excluirCliente,
+        selecionarCliente,
+        tabelaVisivel,
+        exibirTabela
+   } = useClientes()
 
   return (
     <div className={`
@@ -37,25 +25,25 @@ export default function Home() {
       text-white
     `}>
       <Layout titulo="Cadastro Simples">
-        {visivel === 'tabela' ? (
+        {tabelaVisivel ? (
         <>
           <div className="flex justify-end">
-          <Botao className="mb-4" onClick={() => setVisivel('form')}>
+          <Botao className="mb-4" onClick={novoCliente}>
             Novo Cliente
           </Botao>
           </div>
           
           <Tabela clientes={clientes}
-                  clienteSelecionado={clienteSelecionado} 
-                  clienteExcluido={clienteExcluido} 
+                  clienteSelecionado={selecionarCliente} 
+                  clienteExcluido={excluirCliente} 
           />
         </>
 
         ) : (
           <Formulario 
-            cliente={clientes[0]}
+            cliente={cliente}
             clienteMudou={salvarCliente}
-            cancelado={() => setVisivel('tabela')}
+            cancelado={() => exibirTabela}
           />
         )}
 
